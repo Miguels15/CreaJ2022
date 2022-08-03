@@ -19,13 +19,14 @@ body{
     text-align: center;
     font-weight: bold;
     font-size: 3em;
-    animation: arriba 1s ease-in;
+    animation: arriba 0.5s ease-in;
 }
 
 .input{
 	border: 0;
 	outline: none;
 	color: rgb(48, 153, 159);
+	font-weight: bold;
 }
 
 .search_wrap{
@@ -33,7 +34,7 @@ body{
     margin-bottom: 100px;
     display: flex;
     justify-content: center;
-    animation: arriba 1s ease-in;
+    animation: arriba 0.5s ease-in;
 }
 
 .search_wrap .search_box{
@@ -93,11 +94,84 @@ body{
 .background-cards{
     width: 100%;
     background-image: linear-gradient(rgb(242, 244, 248), rgb(194, 193, 193));
+	
 }
+
+.card{
+	width: 25%;
+	margin: 50px 20px 20px 20px;
+    margin-left: 5.5%;
+	padding: 10px;
+    display: inline-block;
+    vertical-align: middle;
+	border-radius: 5px;
+	background-color: rgba(255, 255, 255, 0.1);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+	animation: arriba 1.2s ease-in;
+}
+
+.card img{
+	width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card hr{
+    width: 222px;
+    padding: 2.5px;
+	background: rgb(253, 102, 102);
+    margin-bottom: 5px;
+	border: none;
+}
+
+.card a{
+	display: inline-block;
+	text-decoration: none;
+	font-weight: bold;
+	padding: 10px 0px;
+	color: rgb(48, 153, 159);
+}
+
+.card a:nth-child(even){
+	padding: 10px 20px;
+	background-color: rgb(253, 102, 102);
+	border-radius: 40px;
+	float: right;
+	text-decoration: none;
+	font-weight: bold;
+	color: #fff;
+}
+
+@media screen and (max-width: 1070px ) {
+	.card hr{
+		width: 220px;
+	}
+
+    .card{
+        width: 40%;
+        margin: 0px 0px 0px 70px ;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 768px ) {
+	.card hr{
+		width: 216px;
+	}
+
+    .card{
+        width: 90%;
+        margin: 0px 0px 0px 30px ;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
 @keyframes arriba{
     0%{
         opacity: 0;
-        transform: translateY(100px);
+        transform: translateY(100%);
     }
 
     100%{

@@ -96,7 +96,7 @@ background: linear-gradient(to right, rgba(229, 127, 132, 1), rgba(66, 151, 160,
         
         }
     
-    @keyframes moverIzquierda{
+    /*@keyframes moverIzquierda{
         0%{
             opacity: 0;
             transform: translateX(-100px);
@@ -106,7 +106,7 @@ background: linear-gradient(to right, rgba(229, 127, 132, 1), rgba(66, 151, 160,
             opacity: 1;
             transform: translate(0);
         }
-    }
+    }*/
   
     @media screen and (max-width:700px){
         
@@ -169,3 +169,4 @@ background: linear-gradient(to right, rgba(229, 127, 132, 1), rgba(66, 151, 160,
         }
       
     }    
+    
