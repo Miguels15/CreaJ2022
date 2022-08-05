@@ -43,15 +43,15 @@
 			<h1>Crear una cuenta</h1>
 
 			<span>Ingresa la información</span>
-			<input type="text" name="nom" placeholder="Nombre">
-			<input type="email" name="email" placeholder="Correo">
-			<input type="text" name="username" placeholder="Username">
-			<input type="tel" name="telefono" placeholder="Telefono">
-			<input type="password" name="pass" placeholder="Contraseña">
-			<select name="genero">
+			<input type="text" name="nom" placeholder="Nombre" id="nombre">
+			<input type="email" name="email" placeholder="Correo" id="mail">
+			<input type="text" name="username" placeholder="Username" id="usuario">
+			<input type="tel" name="telefono" placeholder="Telefono" id="telefono">
+			<input type="password" name="pass" placeholder="Contraseña" id="contra">
+			<select name="genero" id="generos">
 				<option selected disabled="">Selecciona una opción</option>
-				<option value="F">Femenino</option>
-				<option value="M">Masculino</option>
+				<option value="1">Femenino</option>
+				<option value="2">Masculino</option>
 			</select>
             <input type="submit" name="accion" value="Registrarse" class="botonR">
 
