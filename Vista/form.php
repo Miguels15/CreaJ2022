@@ -54,7 +54,7 @@
 				<option value="2">Masculino</option>
 			</select>
             <input type="submit" name="accion" value="Registrarse" class="botonR">
-
+			<script src="../js/validarForm.js"></script>
 		</form>
 	</div>
     
