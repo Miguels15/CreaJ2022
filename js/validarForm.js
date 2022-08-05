@@ -43,8 +43,8 @@ function validarRegistro(validar){
             return false;
     }
 
-    indice = document.getElementById("opciones").selectedIndex;
-    if( indice == null || indice == 0 ) {
+    genero = document.getElementById("generos").selectedIndex;
+    if( genero == null || genero == 0 ) {
         alert('Especifique su genero')
         return false;
 }
