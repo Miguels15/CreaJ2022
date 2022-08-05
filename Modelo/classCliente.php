@@ -2,21 +2,21 @@
 
 class Usuario{
 
-    public $nombre;
-    public $correo;
-    public $username;
+    public $nom;
+    public $mail;
+    public $user;
     public $tel;
     public $pass;
     public $gen;
     public function __construct($nom, $cor, $user, $tel, $pass, $gen){
         
         if(!empty($nom))
-            $this->nombre = $nom;
+            $this->nom = $nom;
         else
             throw new Exception('Error. Nombre incorrecto');
             $this->valEmail($cor);
         if(!empty($user))
-            $this->username = $user;
+            $this->user = $user;
         else
             throw new Exception('Error. username vacío');
 
@@ -40,7 +40,7 @@ class Usuario{
 private function valEmail($cor){
     $regex = "/^([a-zA-Z0-9\.]+@+[a-zA-Z]+(\.)+[a-zA-Z]{2,3})$/";
     if(!empty($cor) && preg_match($regex, $cor))
-        $this->correo = $cor;
+        $this->mail = $cor;
     else
         throw new Exception('Error. email vacío');
 }
@@ -50,13 +50,13 @@ public function setEmail($email){
 }
 //Creando GETTERS
 public function getNombre(){
-    return $this->nombre;
+    return $this->nom;
 }
 public function getCorreo(){
-    return $this->correo;
+    return $this->mail;
 }
 public function getUsername(){
-    return $this->username;
+    return $this->user;
 }
 public function getTel(){
     return $this->tel;
