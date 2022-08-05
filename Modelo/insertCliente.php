@@ -10,7 +10,7 @@ class conClient{
         try{
             $stmt = $dbh->prepare($sql);
             $stmt->execute((array) $usuario);
-            var_dump((array) $usuario);
+            header('Location: ../vista/form.php');
         }catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         }
