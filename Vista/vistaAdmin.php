@@ -24,9 +24,9 @@
 
                 <ul>
                     <li><a id="icono" class="icono">Menú</a></li>
-                    <li><a id="icono" class="icono2"  href="index.html">Inicio</a></li>
+                    <li><a id="icono" class="icono2"  href="../inde2.php">Inicio</a></li>
                     <li><a id="icono2" class="icono2">Servicios</a></li>
-                    <li><a id="icono2"  href="buscar-Vivienda.html" class="icono2">Explorar</a></li>
+                    <li><a id="icono2"  href="../buscar-Vivienda.html" class="icono2">Explorar</a></li>
                     <li class="submenu">
                         <a id="icono2" class="icono2">Administradores</a>
                         <ul class="children">
@@ -34,13 +34,13 @@
                             <li><a href="#">Listado de propiedades</a></li>      
                         </ul>
                     </li>
-                    <li><a id="icono2" href="Vista/form.php" class="icono2">Cuenta</a></li>
+                    <li><a id="icono2" href="form.php" class="icono2">Cuenta</a></li>
                 </ul>
                 <div class="enlaces uno" id="enlaces">
                     <a href="index.html">Inicio</a>
                     <a href="#">Servicios</a>
-                    <a href="buscar-Vivienda.html">Explorar</a>
-                    <a href="Vista/form.php">Cuenta</a>
+                    <a href="../buscar-Vivienda.html">Explorar</a>
+                    <a href="form.php">Cuenta</a>
                 </div>
             </nav>
            

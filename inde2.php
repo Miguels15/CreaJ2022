@@ -18,7 +18,7 @@
             <nav>
                 <ul>
                     <li><a id="icono" class="icono">Menú</a></li>
-                    <li><a id="icono" class="icono2"  href="index.html">Inicio</a></li>
+                    <li><a id="icono" class="icono2"  href="inde2.php">Inicio</a></li>
                     <li><a id="icono2" class="icono2">Servicios</a></li>
                     <li><a id="icono2"  href="buscar-Vivienda.html" class="icono2">Explorar</a></li>
                     <li class="submenu">
@@ -185,26 +185,7 @@
     </figure>
 </section>
 
-<table class="table caption-top">
-            <caption>Listado Usuarios</caption>
-            <tr>
-                <th>id</th>
-            </tr>
-<?php
 
-    if(!isset($cliente)){
-        require_once "Modelo/daoCliente.php";
-    }else
-        require_once "Modelo/daoCliente.php";
-    $dao = new DaoClient();
-    $clientes = $dao->listadoClientes();
-    $enlace ="<a href='Controlador/controlCliente.php?accion=modificar&id=";
-    $enlace2 ="<a href='Controlador/controlCliente.php?accion=eliminar&id=";
-    foreach($clientes as $cliente){
-        echo "<tr><td>". $cliente['Id-Usuario'] ."</td></tr>";
-    }
-?>
-    </table>
 
     <script src="js/script.js"></script>
 

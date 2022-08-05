@@ -70,7 +70,7 @@ header nav ul li .children {
   background: #DA4453;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, rgba(229, 127, 132, 1) rgba(66, 151, 160, 1));  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left,rgba(229, 127, 132, 1), rgba(66, 151, 160, 1)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
-    
+    padding: 0;
 	position: absolute;
 	width: 150%;
 	z-index:1000;
@@ -80,6 +80,8 @@ header nav ul li .children li:hover {
 	border: solid 2px #000;
 
 }
+
+
 
 header nav ul li .children li {
 	display:block;
