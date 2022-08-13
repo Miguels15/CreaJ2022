@@ -39,7 +39,7 @@
 </nav>
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
-		<form action="../Controlador/controlCliente.php" method="post">
+		<form action="../Controlador/controlCliente.php" method="post" id="registro">
 			<h1>Crear una cuenta</h1>
 
 			<span>Ingresa la información</span>
