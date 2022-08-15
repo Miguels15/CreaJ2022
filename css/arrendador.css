@@ -8,7 +8,7 @@
 }
 
 body {
-	background: #F4EAE6 !important;
+	background-color: #F4EAE6 !important;
 	display: flex;
 	flex-direction: column;
 	font-family: 'Montserrat', sans-serif !important;
@@ -161,7 +161,7 @@ input, select {
   .container-footer footer hr{
     border: none;
     height: 2px;
-    background: #bfbfbf7a;
+    background: #c0c0c07a;
   }
   
   .container-footer h4{
@@ -182,7 +182,8 @@ input, select {
 	max-width: 100%;
 	min-height: 620px;
     animation: moverIzquierda 1s ease-in;
-	margin-bottom: 2.5em;
+    margin-bottom: 2.5em;
+
 
 }
 
@@ -342,29 +343,21 @@ input, select {
 }
 
 @media screen and (max-width:450px){
- 
+   
 .container{
-	margin-top: 2em;
+	margin-top: 0.2em;
     width: 90%;
 }
 .container-footer{
 	margin-top: 1.5em;
 }
-   input{
+.sign-in-container{
+    width: 100%;
+}
+input{
     width: 100%;
    }
-   .sign-in-container{
-    display: none;
-   }
-    .sign-in-container2{
-        display: block;
-        width: 100%;
-    }
-  
-    .sign-up-container{
-        display: none;
 
-    }
     .overlay-container{
         display: none;
     }

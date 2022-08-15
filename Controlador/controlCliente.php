@@ -5,6 +5,7 @@ $user= isset($_POST['username'])?$_POST['username']:"";
 $tel= isset($_POST['telefono'])?$_POST['telefono']:"";
 $pass= isset($_POST['pass'])?$_POST['pass']:"";
 $gen= isset($_POST['genero'])?$_POST['genero']:"";
+$rol= "usuario";
 $action= isset($_REQUEST['accion'])?$_REQUEST['accion']:"";
 $accion = isset($_REQUEST['accion'])?$_REQUEST['accion']:"";
 $id = isset($_GET['id'])?$_GET['id']:"";
@@ -16,7 +17,7 @@ if($accion=="Registrarse"){
     require_once '../Modelo/classCliente.php';
     require_once '../Modelo/insertCliente.php';
     $con= new conClient();
-    $usuario= new Usuario($nom, $mail, $user, $tel, $pass, $gen);
+    $usuario= new Usuario($nom, $mail, $user, $tel, $pass, $gen, $rol);
     $con->insertar($usuario);
 }
 
@@ -49,9 +50,7 @@ if($id != "" && $accion=="modificar"){
 <title>Cliente</title>
 </head>
 <body>
-
 <br><h1>Modificar Cliente</h1>
-
 EOD;
 echo $html;
     echo "<div class='container'>    
@@ -66,7 +65,6 @@ echo $html;
         
     </div>
     <input type='hidden' name='Id_Usuario' required value='".$cliente["Id_Usuario"]."'/>
-
 <input type='hidden' name='roles' required value='".$cliente["rol"]."'/>
 <input type='hidden' name='genero' required value='".$cliente["gen"]."'/>
     <div class='form-group  mb-2 row'>
@@ -95,7 +93,6 @@ echo $html;
     </div>
     
     <div class='col'>
-
         <label>Contraseña:</label><br>
         <input type='password' name='pass' class='form-control' placeholder='********' required value='".$cliente["pass"]."'><br>
     </div>
@@ -113,7 +110,7 @@ if($accion == "Modificar"){
     require_once '../Modelo/daoCliente.php';
     $dao = new DaoClient();
 
-    $cliente = new Usuario($nom, $mail, $user, $tel, $pass, $gen); 
+    $cliente = new Usuario($nom, $mail, $user, $tel, $pass, $gen, $rol); 
     
     $dao->modificar($cliente,$idU);
     

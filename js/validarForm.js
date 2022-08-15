@@ -2,8 +2,7 @@ document.addEventListener("DOMContentLoaded", function(){
     document.getElementById("registro").addEventListener('submit', validarRegistro);
 });
 
-function validarRegistro(validar){
-    validar.preventDefault();
+function validarRegistro(){
     var nom = document.getElementById('nombre').value;
     if (nom == /^[A-Z]+$/i) 
     {
@@ -47,9 +46,6 @@ function validarRegistro(validar){
     if( genero == null || genero == 0 ) {
         alert('Especifique su genero')
         return false;
-    }else{
-        alert("Registro exitoso");
-        this.submit(registro);
-    }
+}
 
 }

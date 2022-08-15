@@ -1,16 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registra tu propiedad</title>
+    <title>Registro arrendador</title>
     <link rel="stylesheet" href="../css/arrendador.css">
     <script src="https://kit.fontawesome.com/48fc494f11.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/b81162faad.js" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -31,36 +30,31 @@
           <a class="nav-link" href="catalogo.php">Explorar</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Cuenta</a>
+          <a class="nav-link" href="form.php">Cuenta</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
 <br><br>
-<!--Inicio de formulario para registrar casa-->
 <div class="container" id="container">
 
 	<div class="form-container sign-in-container">
     		<form action="../Controlador/controlArrendador.php" method="post">
-                <br>
-			<h1>Registrar usuario</h1>
+			<h1>Crear una cuenta</h1>
 
 			<span>Ingresa la información</span>
 			<input type="text" name="nom" autocomplete="off" placeholder="Nombre">
 			<input type="email" name="email" autocomplete="off" placeholder="Correo">
 			<input type="text" name="username" autocomplete="off" placeholder="Username">
 			<input type="tel" name="telefono" autocomplete="off" placeholder="Telefono">
-			<input type="password" name="pass"   autocomplete="off" placeholder="Contraseña">
+			<input type="password" name="pass" autocomplete="off" placeholder="Contraseña">
 			<select name="genero">
 				<option selected disabled="">Selecciona una opción</option>
 				<option value="F">Femenino</option>
 				<option value="M">Masculino</option>
 			</select>
-			<input type="submit" name="accion" value="Registrarse" class="botonR" onclick="validarRegistro()">
-            <a href="form.php">¿Ya tienes una cuenta?</a>
-			<a href="registro-arrendador.php">¿Eres dueño de una casa, registrate como arrendador?</a>
-
+            <input type="submit" name="accion" value="Registrarse como arrendador" class="botonR">
 
 		</form>
 	</div>
@@ -88,5 +82,7 @@
 
         </footer>
     </div>
+
+</script>
 </body>
 </html>

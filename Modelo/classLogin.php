@@ -13,7 +13,9 @@ if($_POST){
         $_SESSION['usuario']=$usuario["correo"];
         header("location:../index.html");
     }else{
-        echo "<script>alert('Correo o contraseña son incorrectos, vuelva a intentarlo');</script>";   
+        
+        echo "<script>alert('Correo o contraseña son incorrectos, vuelva a intentarlo');</script>";
+        header("location: ../Vista/form.php");
     }
 } 
 ?>

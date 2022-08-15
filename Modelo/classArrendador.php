@@ -1,22 +1,23 @@
-
 <?php
-class Usuario{
 
-    public $nom;
-    public $mail;
-    public $user;
+class Arrendador{
+
+    public $nombre;
+    public $correo;
+    public $username;
     public $tel;
     public $pass;
     public $gen;
     public $rol;
     public function __construct($nom, $cor, $user, $tel, $pass, $gen, $rol){
+        
         if(!empty($nom))
-            $this->nom = $nom;
+            $this->nombre = $nom;
         else
             throw new Exception('Error. Nombre incorrecto');
             $this->valEmail($cor);
         if(!empty($user))
-            $this->user = $user;
+            $this->username = $user;
         else
             throw new Exception('Error. username vacío');
 
@@ -33,17 +34,17 @@ class Usuario{
             $this->gen = $gen;
         else
             throw new Exception('Error. genero vacío');
-            if(!empty($rol))
-            $this->rol = $rol;
-        else
-            throw new Exception('Error. rol vacío');
+       if(!empty($rol))
+        $this->rol = $rol;
+       else
+       throw new Exception('Error. Rol vacio');
     }   
 
 
 private function valEmail($cor){
     $regex = "/^([a-zA-Z0-9\.]+@+[a-zA-Z]+(\.)+[a-zA-Z]{2,3})$/";
     if(!empty($cor) && preg_match($regex, $cor))
-        $this->mail = $cor;
+        $this->correo = $cor;
     else
         throw new Exception('Error. email vacío');
 }
@@ -53,13 +54,13 @@ public function setEmail($email){
 }
 //Creando GETTERS
 public function getNombre(){
-    return $this->nom;
+    return $this->nombre;
 }
 public function getCorreo(){
-    return $this->mail;
+    return $this->correo;
 }
 public function getUsername(){
-    return $this->user;
+    return $this->username;
 }
 public function getTel(){
     return $this->tel;
@@ -74,5 +75,4 @@ public function getRol(){
     return $this->rol;
 }
 }
-
 ?>

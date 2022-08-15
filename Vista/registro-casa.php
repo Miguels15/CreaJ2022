@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registra tu propiedad</title>
-    <link rel="stylesheet" href="../css/arrendador.css">
+    <link rel="stylesheet" href="../css/propiedad.css">
     <script src="https://kit.fontawesome.com/48fc494f11.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/b81162faad.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -42,25 +42,34 @@
 <div class="container" id="container">
 
 	<div class="form-container sign-in-container">
-    		<form action="../Controlador/controlArrendador.php" method="post">
+    		<form action="../Controlador/controlCasas.php" method="post">
                 <br>
-			<h1>Registrar usuario</h1>
+			<h1>Registrar propiedad</h1>
 
 			<span>Ingresa la información</span>
-			<input type="text" name="nom" autocomplete="off" placeholder="Nombre">
-			<input type="email" name="email" autocomplete="off" placeholder="Correo">
-			<input type="text" name="username" autocomplete="off" placeholder="Username">
-			<input type="tel" name="telefono" autocomplete="off" placeholder="Telefono">
-			<input type="password" name="pass"   autocomplete="off" placeholder="Contraseña">
-			<select name="genero">
-				<option selected disabled="">Selecciona una opción</option>
-				<option value="F">Femenino</option>
-				<option value="M">Masculino</option>
+			<input type="text" name="nomp" autocomplete="off" placeholder="Nombre de la propiedad">
+			<input type="text" name="direc" autocomplete="off" placeholder="Dirección de la casa">
+            <input type="number" name="precio" autocomplete="off" placeholder="Precio de la propiedad en dolares $">
+            <select name="depa">
+				<option selected disabled="">Departamento en el que se ubica.</option>
+				<option value="Ahuachapán">Ahuachapán</option>
+				<option value="Cabañas">Cabañas</option>
+                <option value="Chalatenango">Chalatenango</option>
+				<option value="Cuscatlán">Cuscatlán</option>
+                <option value="La Libertad">La Libertad</option>
+				<option value="Morazán">Morazán</option>
+                <option value="La Paz">La Paz</option>
+				<option value="Santa Ana">Santa Ana</option>
+                <option value="San Miguel">San Miguel</option>
+				<option value="San Salvador">San Salvador</option>
+                <option value="San Vicente">San Vicente</option>
+				<option value="Sonsonate">Sonsonate</option>
+                <option value="La Unión">La Unión</option>
+				<option value="Usulután">Usulután</option>
 			</select>
-			<input type="submit" name="accion" value="Registrarse" class="botonR" onclick="validarRegistro()">
-            <a href="form.php">¿Ya tienes una cuenta?</a>
-			<a href="registro-arrendador.php">¿Eres dueño de una casa, registrate como arrendador?</a>
-
+      <textarea name="descu" placeholder="Ingresa una descripción de la propiedad" id="text"te cols="30" rows="10"></textarea>
+			<input type="file"  accept="image/*" name="image" id="foto" placeholder="Ingresa foto de propiedad"  multiple>
+      <input type="submit" name="accion" value="Registrar propiedad" class="botonR">
 
 		</form>
 	</div>
@@ -68,8 +77,8 @@
 		<div class="overlay">
         <div class="overlay-panel overlay-right">
 
-        <h1>Hola amigo!</h1>
-				<p>Es un gusto tenerte navegando en nuestro sitio!</p>
+        <h1>Pon en alquiler tu propiedad!</h1>
+				<p>Es un gusto poder ayudarte en el proceso de alquiler de tu casa!</p>
 			</div>
          
 		</div>

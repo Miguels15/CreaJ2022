@@ -8,7 +8,7 @@
 }
 
 body {
-	background: #F4EAE6 !important;
+	background-color: #F4EAE6 !important;
 	display: flex;
 	flex-direction: column;
 	font-family: 'Montserrat', sans-serif !important;
@@ -16,7 +16,9 @@ body {
 	margin: -20px 0 50px;
 
 }
-
+nav{
+    height: 4rem !important;
+}
 nav.navbar {
     background-color: #4297A0 !important;
 }
@@ -101,12 +103,13 @@ button.ghost {
 }
 
 
-input, select {
+input, select, textarea {
 	background-color: #eee;
 	border: none;
 	padding: 12px 15px !important;
 	margin: 8px 0!important;
 	width: 100%;
+    resize: none;
     animation: moverDerecha 1s ease-in;
 
 }
@@ -161,7 +164,7 @@ input, select {
   .container-footer footer hr{
     border: none;
     height: 2px;
-    background: #bfbfbf7a;
+    background: #c0c0c07a;
   }
   
   .container-footer h4{
@@ -180,9 +183,10 @@ input, select {
 	overflow: hidden;
 	width: 75%;
 	max-width: 100%;
-	min-height: 620px;
+	min-height: 700px;
     animation: moverIzquierda 1s ease-in;
-	margin-bottom: 2.5em;
+    margin-bottom: 2.5em;
+
 
 }
 
@@ -271,7 +275,7 @@ input, select {
 
 .overlay {
 	background: rgba(66, 151, 160, 1);
-	background: linear-gradient(to right, rgba(229, 127, 132, 1), rgba(66, 151, 160, 1)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: linear-gradient(to left, rgba(229, 127, 132, 1), rgba(66, 151, 160, 1)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -342,29 +346,28 @@ input, select {
 }
 
 @media screen and (max-width:450px){
- 
+   body{
+	background: #f6f5f7;
+	display: flex;
+	flex-direction: column;
+	font-family: 'Montserrat', sans-serif;
+	height: 155vh;
+	margin: -20px 0 50px;
+   }
 .container{
-	margin-top: 2em;
+	margin-top: 0.2em;
     width: 90%;
 }
 .container-footer{
 	margin-top: 1.5em;
 }
-   input{
+.sign-in-container{
+    width: 100%;
+}
+input{
     width: 100%;
    }
-   .sign-in-container{
-    display: none;
-   }
-    .sign-in-container2{
-        display: block;
-        width: 100%;
-    }
-  
-    .sign-up-container{
-        display: none;
 
-    }
     .overlay-container{
         display: none;
     }

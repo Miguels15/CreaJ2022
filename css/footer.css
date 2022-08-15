@@ -1,5 +1,7 @@
+
 .container-footer{
       width: 100%;
+
       padding: 40px 0;
       background: #fff;
       margin-top: 60px;
@@ -10,7 +12,7 @@
       max-width: 1200px;
       margin: auto;
     }
-    
+   
     .container-footer footer .redes-footer{
       display: flex;
       justify-content: center;

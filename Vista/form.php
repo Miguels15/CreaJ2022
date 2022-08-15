@@ -4,13 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="../css/form.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet"> 
-    <script src="https://kit.fontawesome.com/48fc494f11.js" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/b81162faad.js" crossorigin="anonymous"></script>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <title>Cuenta</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -22,16 +19,16 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+          <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="#">Servicios</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="catalogo.php">Explorar</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <a class="nav-link" href="#">Cuenta</a>
         </li>
       </ul>
     </div>
@@ -39,22 +36,23 @@
 </nav>
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
-		<form action="../Controlador/controlCliente.php" method="post" id="registro">
+		<form action="../Controlador/controlCliente.php" id="registro"method="post">
 			<h1>Crear una cuenta</h1>
 
 			<span>Ingresa la información</span>
-			<input type="text" name="nom" placeholder="Nombre" id="nombre">
-			<input type="email" name="email" placeholder="Correo" id="mail">
-			<input type="text" name="username" placeholder="Username" id="usuario">
-			<input type="tel" name="telefono" placeholder="Telefono" id="telefono">
-			<input type="password" name="pass" placeholder="Contraseña" id="contra">
-			<select name="genero" id="generos">
+			<input type="text" name="nom" autocomplete="off" placeholder="Nombre">
+			<input type="email" name="email" autocomplete="off" placeholder="Correo">
+			<input type="text" name="username" autocomplete="off" placeholder="Username">
+			<input type="tel" name="telefono" autocomplete="off" placeholder="Telefono">
+			<input type="password" name="pass"   autocomplete="off" placeholder="Contraseña">
+			<select name="genero">
 				<option selected disabled="">Selecciona una opción</option>
-				<option value="1">Femenino</option>
-				<option value="2">Masculino</option>
+				<option value="F">Femenino</option>
+				<option value="M">Masculino</option>
 			</select>
-            <input type="submit" name="accion" value="Registrarse" class="botonR">
-			<script src="../js/validarForm.js"></script>
+            <input type="submit" name="accion" value="Registrarse" class="botonR" onclick="validarRegistro()">
+            <a href="registro-arrendador.php">¿Eres dueño de una casa, registrate como arrendador?</a>
+
 		</form>
 	</div>
     
@@ -65,8 +63,8 @@
             <img src="../img/logo completo.png" alt="Logo" width="100%">
 
 			<span>Ingresa correctamente tus credenciales</span>
-            <input type="email" placeholder="Correo" name="correo">
-            <input type="password" placeholder="Contraseña" name="contra">
+            <input type="email" autocomplete="off" placeholder="Correo" name="correo">
+            <input type="password"  autocomplete="off" placeholder="Contraseña" name="contra">
             <input type="submit" value="Inicia Sesión" class="botonL">
             <a href="registro-movil.php">¿No tienes una cuenta?</a>
 		</form>
@@ -78,8 +76,8 @@
             <img src="../img/logo completo.png" alt="Logo" width="100%">
 
 			<span>Ingresa correctamente tus credenciales</span>
-            <input type="email" placeholder="Correo" name="correo">
-            <input type="password" placeholder="Contraseña" name="contra">
+            <input type="email" autocomplete="off" id="email" placeholder="Correo" name="correo">
+            <input type="password" autocomplete="off" id="pass" placeholder="Contraseña" name="contra">
             <input type="submit" value="Inicia Sesión" class="botonL">
 
 		</form>
@@ -114,5 +112,9 @@
 
         </footer>
     </div>
+
+</script>
+<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
 </body>
 </html>

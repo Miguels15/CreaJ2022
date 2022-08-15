@@ -9,45 +9,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script type="text/javascript" src="vista/main2.js"></script>
     
-    <link rel="stylesheet" href="../css/menu.css">
     <link rel="stylesheet" href="../css/busqueda.css">
     <title>Buscar una vivienda</title>
 </head>
 <body>
     
-<header>
-        <div class="container">
-            <nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">PROPERTY DELUXE</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="../inde2.php">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Servicios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="catalogo.php">Explorar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="vistaAdmin.php">Lista Usarios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Listado de Propiedades</a>
+        </li>
+          <a class="nav-link" href="form.php">Cuenta</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-                <ul>
-                    <li><a id="icono" class="icono">Menú</a></li>
-                    <li><a id="icono" class="icono2"  href="../inde2.php">Inicio</a></li>
-                    <li><a id="icono2" class="icono2">Servicios</a></li>
-                    <li><a id="icono2"  href="../buscar-Vivienda.html" class="icono2">Explorar</a></li>
-                    <li class="submenu">
-                        <a id="icono2" class="icono2">Administradores</a>
-                        <ul class="children">
-                            <li><a href="vistaAdmin.php">Lista usuarios</a></li>
-                            <li><a href="#">Listado de propiedades</a></li>      
-                        </ul>
-                    </li>
-                    <li><a id="icono2" href="form.php" class="icono2">Cuenta</a></li>
-                </ul>
-                <div class="enlaces uno" id="enlaces">
-                    <a href="index.html">Inicio</a>
-                    <a href="#">Servicios</a>
-                    <a href="../buscar-Vivienda.html">Explorar</a>
-                    <a href="form.php">Cuenta</a>
-                </div>
-            </nav>
-           
-    </header>
 
-
-<h1 class="title">Busca un nuevo hogar</h1>
+<h1 class="title">Buscar usuario</h1>
 <div class="search_wrap search_wrap">
     <div class="search_box">
         <div class="btn btn_common">
@@ -56,12 +58,11 @@
         <input type="text" class="input" placeholder="Buscar">
     </div>
 </div>
-
-
-<table class="table caption-top">
-            <caption>Listado Usuarios</caption>
+<div class="tabla">
+<h3 class="clie">Listado usuarios</h3>
+<table class="table table-striped table-dark">
             <tr>
-            <th>id</th><th  >Nombre</th><th>Username</th><th>Rol</th><th>Modificar</th><th>Eliminar</th>
+            <th scope="col">id</th><th scope="col">Nombre</th><th scope="col">Username</th><th scope="col">Rol</th><th scope="col">Modificar</th><th scope="col">Eliminar</th>
             </tr>
 <?php
 
@@ -78,9 +79,9 @@
     }
 ?>
     </table>
-    
+    </div>
 
-    <script src="js/script.js"></script>
+    <script src="js/validarForm.js"></script>
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 </body>
 </html>
