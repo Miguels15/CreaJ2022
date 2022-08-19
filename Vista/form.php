@@ -1,4 +1,3 @@
-
 <?php
 if($_POST){
   session_start();
@@ -22,21 +21,52 @@ if($_POST){
         echo "<script>alert('Usuario y clave incorrectos, vuelva a intentarlo');</script>";   
       }
   }
+  $query2= $pdo->prepare("SELECT * FROM arrendador WHERE correo=:correo AND pass=:pass");
+  $query2->bindParam(":correo",$correo);
+  $query2->bindParam(":pass",$pass);
+  $query2->execute();
+  $usuario=$query2->fetch(PDO::FETCH_ASSOC);
+  if ($usuario) {
+    if ($_POST['correo']==$usuario["correo"] && $_POST['contra']==$usuario['pass']) { 
+      $_SESSION['usuarioo']=$usuario["correo"];
+      /*$_SESSION['id']=$usuario["idCliente"];*/
+      header('location:../indexusuario.php');
+      /*echo $_SESSION['id'];*/
+    }else{
+      echo "<script>alert('Usuario y clave incorrectos, vuelva a intentarlo');</script>";   
+    }
+}
+$query3= $pdo->prepare("SELECT * FROM admin WHERE correo=:correo AND pass=:pass");
+$query3->bindParam(":correo",$correo);
+$query3->bindParam(":pass",$pass);
+$query3->execute();
+$usuario=$query3->fetch(PDO::FETCH_ASSOC);
+if ($usuario) {
+  if ($_POST['correo']==$usuario["correo"] && $_POST['contra']==$usuario['pass']) { 
+    $_SESSION['usuarioo']=$usuario["correo"];
+    /*$_SESSION['id']=$usuario["idCliente"];*/
+    header('location:../inde2.php');
+    /*echo $_SESSION['id'];*/
+  }else{
+    echo "<script>alert('Usuario y clave incorrectos, vuelva a intentarlo');</script>";   
+  }
+}
 } 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
     <link rel="stylesheet" href="../css/form.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <title>Cuenta</title>
-</head>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet"> 
+    <script src="https://kit.fontawesome.com/48fc494f11.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b81162faad.js" crossorigin="anonymous"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
@@ -47,16 +77,16 @@ if($_POST){
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+          <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Servicios</a>
+          <a class="nav-link" href="#">Features</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="catalogo.php">Explorar</a>
+          <a class="nav-link" href="#">Pricing</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Cuenta</a>
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </li>
       </ul>
     </div>
@@ -64,36 +94,37 @@ if($_POST){
 </nav>
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
-		<form action="../Controlador/controlCliente.php" id="registro"method="post">
+		<form action="../Controlador/controlCliente.php" method="post" id="registro">
 			<h1>Crear una cuenta</h1>
 
 			<span>Ingresa la información</span>
-			<input type="text" name="nom" autocomplete="off" placeholder="Nombre">
-			<input type="email" name="email" autocomplete="off" placeholder="Correo">
-			<input type="text" name="username" autocomplete="off" placeholder="Username">
-			<input type="tel" name="telefono" autocomplete="off" placeholder="Telefono">
-			<input type="password" name="pass"   autocomplete="off" placeholder="Contraseña">
-			<select name="genero">
+			<input type="text" name="nom" placeholder="Nombre" id="nombre">
+			<input type="email" name="email" placeholder="Correo" id="mail">
+			<input type="text" name="username" placeholder="Username" id="usuario">
+			<input type="tel" name="telefono" placeholder="Telefono" id="telefono">
+			<input type="password" name="pass" placeholder="Contraseña" id="contra">
+			<select name="genero" id="generos">
 				<option selected disabled="">Selecciona una opción</option>
-				<option value="F">Femenino</option>
-				<option value="M">Masculino</option>
+				<option value="1">Femenino</option>
+				<option value="2">Masculino</option>
 			</select>
-			<input type="hidden" name="accion" value="Registrarse">
-            <input type="submit" name="accion" value="Registrarse" class="botonR" onclick="validarRegistro()">
+      <input type="hidden" name="accion" value="Registrarse">
+            <input type="submit" name="action" value="Registrarse" class="botonR">
             <a href="registro-arrendador.php">¿Eres dueño de una casa, registrate como arrendador?</a>
+			<script src="../js/validarForm.js"></script>
 
 		</form>
 	</div>
     
     <div class="form-container sign-in-container2">
 
-		<form method="post" action="../Modelo/classLogin.php">
+		<form method="post" action="">
 			<h1>Inicia sesión</h1>
             <img src="../img/logo completo.png" alt="Logo" width="100%">
 
 			<span>Ingresa correctamente tus credenciales</span>
-            <input type="email" autocomplete="off" placeholder="Correo" name="correo">
-            <input type="password"  autocomplete="off" placeholder="Contraseña" name="contra">
+            <input type="email" placeholder="Correo" name="correo">
+            <input type="password" placeholder="Contraseña" name="contra">
             <input type="submit" value="Inicia Sesión" class="botonL">
             <a href="registro-movil.php">¿No tienes una cuenta?</a>
 		</form>
@@ -105,8 +136,8 @@ if($_POST){
             <img src="../img/logo completo.png" alt="Logo" width="100%">
 
 			<span>Ingresa correctamente tus credenciales</span>
-            <input type="email" autocomplete="off" id="email" placeholder="Correo" name="correo">
-            <input type="password" autocomplete="off" id="pass" placeholder="Contraseña" name="contra">
+            <input type="email" placeholder="Correo" name="correo">
+            <input type="password" placeholder="Contraseña" name="contra">
             <input type="submit" value="Inicia Sesión" class="botonL">
 
 		</form>
@@ -141,9 +172,5 @@ if($_POST){
 
         </footer>
     </div>
-
-</script>
-<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-
 </body>
 </html>

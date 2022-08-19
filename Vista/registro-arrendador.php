@@ -5,12 +5,11 @@ if($_POST){
   $correo=$_POST['email'];
   $pass=$_POST['pass'];
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO:: ERRMODE_EXCEPTION);
-  $query= $pdo->prepare("SELECT * FROM arrendador WHERE correo=:correo AND pass=:pass");
-  
-  $query->bindParam(":correo",$correo);
-  $query->bindParam(":pass",$pass);
-  $query->execute();
-  $usuario=$query->fetch(PDO::FETCH_ASSOC);
+  $query2= $pdo->prepare("SELECT * FROM arrendador WHERE correo=:correo AND pass=:pass");
+  $query2->bindParam(":correo",$correo);
+  $query2->bindParam(":pass",$pass);
+  $query2->execute();
+  $usuario=$query2->fetch(PDO::FETCH_ASSOC);
   if ($usuario) {
       if ($_POST['email']==$usuario["correo"] && $_POST['pass']==$usuario['pass']) { 
         $_SESSION['usuarioo']=$usuario["correo"];
