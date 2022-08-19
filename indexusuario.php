@@ -1,6 +1,9 @@
+<?php 
+session_start();
+if ($_SESSION['usuarioo']){ 
+?>
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,14 +32,20 @@
                             <li><a href="#">Listado de propiedades</a></li>      
                         </ul>
                     </li>-->
+                    
                     <li><a id="icono2" href="Vista/form.php" class="icono2">Cuenta</a></li>
+                    <?php
+                    require('Controlador/controlArrendador.php');
+                    if($rol=="arrendador"){
+                        echo "<a href='cerrarsesion.php'><span>Cerrar Sesión</span></a>";
+                    }
+                    ?>
                 </ul>
                 <div class="enlaces uno" id="enlaces">
                     <a href="index.html">Inicio</a>
                     <a href="#">Servicios</a>
                     <a href="Vista/catalogo.php">Explorar</a>
                     <a href="Vista/form.php">Cuenta</a>
-                    
                 </div>
             </nav>
             <div class="textos">
@@ -203,3 +212,8 @@
     </div>
 </body>
 </html>
+<?php   
+}else{
+    header("location:index.html");
+}
+?>

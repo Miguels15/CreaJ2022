@@ -1,5 +1,6 @@
 <?php
 if($_POST){
+    session_start();
     require('conexionLogin.php');
     $correo=$_POST['correo'];
     $pass=$_POST['contra'];
@@ -9,13 +10,7 @@ if($_POST){
     $query->bindParam(":pass",$pass);
     $query->execute();
     $usuario=$query->fetch(PDO::FETCH_ASSOC);
-    if($usuario){
-        $_SESSION['usuario']=$usuario["correo"];
-        header("location:../index.html");
-    }else{
-        
-        echo "<script>alert('Correo o contraseña son incorrectos, vuelva a intentarlo');</script>";
-        header("location: ../Vista/form.php");
-    }
+
+    
 } 
 ?>

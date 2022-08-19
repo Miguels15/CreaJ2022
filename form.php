@@ -1,3 +1,27 @@
+<?php
+if($_POST){
+  session_start();
+  require('conexionLogin.php');
+  $correo=$_POST['correo'];
+  $pass=$_POST['contra'];
+  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO:: ERRMODE_EXCEPTION);
+  $query= $pdo->prepare("SELECT * FROM usuarios WHERE correo=:correo AND pass=:pass");
+  $query->bindParam(":correo",$correo);
+  $query->bindParam(":pass",$pass);
+  $query->execute();
+  $usuario=$query->fetch(PDO::FETCH_ASSOC);
+
+  if ($usuario) {
+      if ($_POST['correo']==$usuario["correo"] && $_POST['contra']==$usuario['contra']) { 
+        /*$_SESSION['id']=$usuario["idCliente"];*/
+        echo "<script>alert('hola');</script>"; 
+        /*echo $_SESSION['id'];*/
+      }else{
+        echo "<script>alert('Usuario y clave incorrectos, vuelva a intentarlo');</script>";   
+      }
+  }
+} 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,7 +88,7 @@
     
     <div class="form-container sign-in-container2">
 
-		<form method="post" action="../Modelo/classLogin.php">
+		<form method="post" action="">
 			<h1>Inicia sesión</h1>
             <img src="../img/logo completo.png" alt="Logo" width="100%">
 

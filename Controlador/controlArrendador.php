@@ -14,10 +14,8 @@ if($action=="Registrarse como arrendador"){
     require_once '../Modelo/insertArrendador.php';
     $con= new conArrendador();
     $arrendador= new Arrendador($nom, $mail, $user, $tel, $pass, $gen, $rol);
-  
     $con->insertar($arrendador);
     header("location: ../index.html");
-  
 }
 
 ?>
