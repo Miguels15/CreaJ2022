@@ -2,7 +2,8 @@ document.addEventListener("DOMContentLoaded", function(){
     document.getElementById("registro").addEventListener('submit', validarRegistro);
 });
 
-function validarRegistro(){
+function validarRegistro(validar){
+    validar.preventDefault();
     var nom = document.getElementById('nombre').value;
     if (nom == /^[A-Z]+$/i) 
     {
@@ -47,5 +48,6 @@ function validarRegistro(){
         alert('Especifique su genero')
         return false;
 }
-
+    alert("Registro exitoso");
+    this.submit();
 }
