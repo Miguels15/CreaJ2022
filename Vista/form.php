@@ -78,6 +78,7 @@ if($_POST){
 				<option value="F">Femenino</option>
 				<option value="M">Masculino</option>
 			</select>
+			<input type="hidden" name="accion" value="Registrarse">
             <input type="submit" name="accion" value="Registrarse" class="botonR" onclick="validarRegistro()">
             <a href="registro-arrendador.php">¿Eres dueño de una casa, registrate como arrendador?</a>
 
