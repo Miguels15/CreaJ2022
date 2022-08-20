@@ -6,6 +6,7 @@ $tel= isset($_POST['telefono'])?$_POST['telefono']:"";
 $pass= isset($_POST['pass'])?$_POST['pass']:"";
 $gen= isset($_POST['genero'])?$_POST['genero']:"";
 $rol = "arrendador";
+$accion = isset($_REQUEST['accion'])?$_REQUEST['accion']:"";
 $action= isset($_REQUEST['accion'])?$_REQUEST['accion']:"";
 //variable para login
 $usuex;
