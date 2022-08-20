@@ -64,8 +64,8 @@ if ($usuario) {
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet"> 
     <script src="https://kit.fontawesome.com/48fc494f11.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/b81162faad.js" crossorigin="anonymous"></script>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -92,6 +92,7 @@ if ($usuario) {
     </div>
   </div>
 </nav>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
 		<form action="../Controlador/controlCliente.php" method="post" id="registro">
@@ -99,15 +100,21 @@ if ($usuario) {
 
 			<span>Ingresa la información</span>
 			<input type="text" name="nom" placeholder="Nombre" id="nombre">
+      <span id="nomError" class="Error"></span>
 			<input type="email" name="email" placeholder="Correo" id="mail">
+      <span id="emailError" class="Error"></span>
 			<input type="text" name="username" placeholder="Username" id="usuario">
+      <span id="userError" class="Error"></span>
 			<input type="tel" name="telefono" placeholder="Telefono" id="telefono">
+      <span id="telError" class="Error"></span>
 			<input type="password" name="pass" placeholder="Contraseña" id="contra">
+      <span id="passError" class="Error"></span>
 			<select name="genero" id="generos">
 				<option selected disabled="">Selecciona una opción</option>
 				<option value="1">Femenino</option>
 				<option value="2">Masculino</option>
 			</select>
+      <span id="genError" class="Error"></span>
       <input type="hidden" name="accion" value="Registrarse">
             <input type="submit" name="action" value="Registrarse" class="botonR">
             <a href="registro-arrendador.php">¿Eres dueño de una casa, registrate como arrendador?</a>

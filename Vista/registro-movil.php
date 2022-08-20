@@ -42,24 +42,31 @@
 <div class="container" id="container">
 
 	<div class="form-container sign-in-container">
-    		<form action="../Controlador/controlArrendador.php" method="post">
+    		<form action="../Controlador/controlCliente.php" method="post" id="registro">
                 <br>
 			<h1>Registrar usuario</h1>
 
 			<span>Ingresa la información</span>
-			<input type="text" name="nom" autocomplete="off" placeholder="Nombre">
-			<input type="email" name="email" autocomplete="off" placeholder="Correo">
-			<input type="text" name="username" autocomplete="off" placeholder="Username">
-			<input type="tel" name="telefono" autocomplete="off" placeholder="Telefono">
-			<input type="password" name="pass"   autocomplete="off" placeholder="Contraseña">
-			<select name="genero">
+      <input type="text" name="nom" placeholder="Nombre" id="nombre">
+      <span id="nomError" class="Error"></span>
+			<input type="email" name="email" placeholder="Correo" id="mail">
+      <span id="emailError" class="Error"></span>
+			<input type="text" name="username" placeholder="Username" id="usuario">
+      <span id="userError" class="Error"></span>
+			<input type="tel" name="telefono" placeholder="Telefono" id="telefono">
+      <span id="telError" class="Error"></span>
+			<input type="password" name="pass" placeholder="Contraseña" id="contra">
+      <span id="passError" class="Error"></span>
+			<select name="genero" id="generos">
 				<option selected disabled="">Selecciona una opción</option>
-				<option value="F">Femenino</option>
-				<option value="M">Masculino</option>
+				<option value="1">Femenino</option>
+				<option value="2">Masculino</option>
 			</select>
-			<input type="submit" name="accion" value="Registrarse" class="botonR" onclick="validarRegistro()">
-            <a href="form.php">¿Ya tienes una cuenta?</a>
-			<a href="registro-arrendador.php">¿Eres dueño de una casa, registrate como arrendador?</a>
+      <span id="genError" class="Error"></span>
+      <input type="hidden" name="accion" value="Registrarse">
+            <input type="submit" name="action" value="Registrarse" class="botonR">
+            <a href="registro-arrendador.php">¿Eres dueño de una casa, registrate como arrendador?</a>
+			<script src="../js/validarForm.js"></script>
 
 
 		</form>
