@@ -42,47 +42,32 @@
               <div class="btn btn_common">
                   <i class="fas fa-search"></i>
               </div>
-              <input type="text" class="input" placeholder="Buscar">
+              <input type="text" class="input" placeholder="Buscar"> 
           </div>
       </div>
-      <section class="background-cards">
-          <div class="card">
-              <img src="img/prueba (1).png">
-              <h2>Nombre de la propiedad</h2>
+
+<?php
+require_once '../Modelo/conexionLogin.php';
+$tarjetas=$pdo->query("SELECT *  FROM casa");
+?>
+<section class='background-cards'>
+<?php
+while ($perFila=$tarjetas->fetch(PDO::FETCH_ASSOC)){
+          
+          echo   " <div class='card'>
+              <img src='data:image/jpg;base64,".base64_encode($perFila['fotos'])." '>
+              <h2>".$perFila['nom']."</h2>
               <hr>
-              <p>Valor: </p><p>Ubicacion: </p>
-              <p>Valoracion: </p>
-              <a href="review.html">Deja tu reseña!</a>
-              <a href="ver-Mas.html">Ver mas</a>
-          </div>
-          <div class="card">
-              <img src="img/prueba (2).png">
-              <h2>Nombre de la propiedad</h2>
-              <hr>
-              <p>Valor: </p><p>Ubicacion: </p>
-              <p>Valoracion: </p>
-              <a href="review.html">Deja tu reseña!</a>
-              <a href="ver-Mas.html">Ver mas</a>
-          </div>
-          <div class="card">
-              <img src="img/prueba (3).png">
-              <h2>Nombre de la propiedad</h2>
-              <hr>
-              <p>Valor: </p><p>Ubicacion: </p>
-              <p>Valoracion: </p>
-              <a href="review.html">Deja tu reseña!</a>
-              <a href="ver-Mas.html">Ver mas</a>
-          </div>
-          <div class="card">
-              <img src="img/prueba (1).png">
-              <h2>Nombre de la propiedad</h2>
-              <hr>
-              <p>Valor: </p><p>Ubicacion: </p>
-              <p>Valoracion: </p>
-              <a href="review.html">Deja tu reseña!</a>
-              <a href="ver-Mas.html">Ver mas</a>
-          </div>
-      </section>
+              <p> Precio: ".$perFila['precio']."</p><p>".$perFila['direc']."</p>
+              <p>".$perFila['depa']."</p>
+              <a href='review.html'>Deja tu reseña!</a>";?>
+              <a href="verMas.php?idCasa=<?php echo $perFila['idPropiedad'];?>">Ver mas</a>
+              <?php echo"
+          </div>";
+      
+          }
+?>
+</section>
       <div class="container-footer" id="footer">	
         <footer class="redes-footer">
           

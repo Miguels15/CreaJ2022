@@ -33,7 +33,7 @@ if ($_SESSION['usuarioo']){
                         </ul>
                     </li>-->
                     
-                    <li><a id="icono2" href="Vista/form.php" class="icono2">Cuenta</a></li>
+                    <li><a id="icono2" href="Vista/form.php?id=<?php echo $_SESSION['usuarioo'];?>" class="icono2">Cuenta</a></li>
                     <?php
                     require('Controlador/controlArrendador.php');
                     if($rol=="arrendador"){
