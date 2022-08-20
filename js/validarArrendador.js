@@ -1,10 +1,10 @@
+//registro arrendador
 document.addEventListener("DOMContentLoaded", function(){
-    document.getElementById("registro").addEventListener('submit', validarRegistro);
+    document.getElementById("registro_arrendador").addEventListener('submit', validarArrendador);
 });
 
-//validar campos de registro de usuario
-function validarRegistro(validar){
-    validar.preventDefault();
+function validarArrendador(arrendador){
+    arrendador.preventDefault();
     var nom = document.getElementById('nombre').value;
         if(nom.length == 0)
         {
@@ -65,4 +65,3 @@ function validarRegistro(validar){
     alert("Registro exitoso");
     this.submit();
 }
-
