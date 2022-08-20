@@ -81,6 +81,28 @@
     </table>
     </div>
 
+    <h3 class="clie">Listado usuarios Arrendadores</h3>
+<table class="table table-striped table-dark">
+            <tr>
+            <th scope="col">id</th><th scope="col">Nombre</th><th scope="col">Username</th><th scope="col">Rol</th><th scope="col">Modificar</th><th scope="col">Eliminar</th>
+            </tr>
+<?php
+
+    if(!isset($cliente)){
+        require_once "../Modelo/daoCliente.php";
+    }else
+        require_once "../Modelo/daoCliente.php";
+    $dao = new DaoClient();
+    $clientes = $dao->listadoClientesArrendador();
+    $enlace ="<a href='../Controlador/controlCliente.php?accion=modificarA&id=";
+    $enlace2 ="<a href='../Controlador/controlCliente.php?accion=eliminarA&id=";
+    foreach($clientes as $cliente){
+        echo "<tr><td>". $cliente['Id_Arrendador'] ."</td><td>". $cliente['nombre'] ."</td><td>". $cliente['username'] ."</td><td>". $cliente['rol'] ."</td><td>".$enlace . $cliente['Id_Arrendador'] ."'><i class='fas fa-edit'></i></a></td><td>".$enlace2 . $cliente['Id_Arrendador'] ."'><i class='fas fa-trash-alt'></i></a></td></tr>";
+    }
+?>
+    </table>
+    </div>
+
     <script src="js/validarForm.js"></script>
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 </body>
