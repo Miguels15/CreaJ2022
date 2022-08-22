@@ -23,7 +23,7 @@ if ($_SESSION['usuarioo']){
                 <ul>
                     <li><a id="icono" class="icono">Menú</a></li>
                     <li><a id="icono" class="icono2"  href="index.html">Inicio</a></li>
-                    <li><a id="icono2" class="icono2">Servicios</a></li>
+                    <li><a id="icono2" class="icono2" href="#">Servicios</a></li>
                     <li><a id="icono2"  href="Vista/catalogo.php" class="icono2">Explorar</a></li>
                     <!--<li class="submenu">
                         <a id="icono2" class="icono2">Administradores</a>
@@ -33,12 +33,26 @@ if ($_SESSION['usuarioo']){
                         </ul>
                     </li>-->
                     
-                    <li><a id="icono2" href="Vista/form.php?id=<?php echo $_SESSION['usuarioo'];?>" class="icono2">Cuenta</a></li>
+                    <li><a id="icono2" href="Vista/form.php" class="icono2">Cuenta</a></li>
                     <?php
                     require('Controlador/controlArrendador.php');
-                    if($rol=="arrendador"){
-                        echo "<a href='cerrarsesion.php'><span>Cerrar Sesión</span></a>";
+                    require('Modelo/conexionLogin.php');
+                    require('Vista/logAr.php');
+                    if($_SESSION['usuarioo']){
+                        echo "<li><a id='icono2' class='icono2' href='cerrarsesion.php'><span>Cerrar Sesión</span></a></li>";
                     }
+                    
+                    $rol=$_POST['rol'];
+                    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO:: ERRMODE_EXCEPTION);
+                    $query2= $pdo->prepare("SELECT rol FROM arrendador WHERE rol=:rol");
+                    $query2->bindParam(":rol",$rol);
+                    $query2->execute();
+                    $usuario=$query2->fetch(PDO::FETCH_ASSOC);
+                    
+                    if($_SESSION['usuarioo'] && $rol){
+                        echo "<li><a id='icono2' class='icono2' href='cerrarsesion.php'><span>Subir casa</span></a></li>";
+                    }
+                    
                     ?>
                 </ul>
                 <div class="enlaces uno" id="enlaces">
@@ -46,6 +60,12 @@ if ($_SESSION['usuarioo']){
                     <a href="#">Servicios</a>
                     <a href="Vista/catalogo.php">Explorar</a>
                     <a href="Vista/form.php">Cuenta</a>
+                    <?php
+                    require('Controlador/controlArrendador.php');
+
+                    
+                    
+                    ?>
                 </div>
             </nav>
             <div class="textos">
