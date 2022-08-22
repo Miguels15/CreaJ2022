@@ -1,3 +1,5 @@
+<?php
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,16 +22,47 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+                
+                <?php
+                session_start();
+                if (isset($_SESSION['usuarioo'])){
+                ?>
+
+                  <a class='nav-link active' aria-current='page' href='../indexusuario.php?id=<?php echo $_SESSION['id'];?>'>Inicio</a>
+                <?php  }else{
+                  ?><a class='nav-link active' aria-current='page' href='../index.html'>Inicio</a>
+                <?php }
+                
+                ?>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Servicios</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="catalogo.php">Explorar</a>
+              <?php
+                if (isset($_SESSION['usuarioo'])){
+                ?>
+
+                <a class="nav-link" href="catalogo.php?id=<?php echo $_SESSION['id'];?>">Explorar</a>
+                <?php  }else{
+                  ?><a class="nav-link" href="catalogo.php">Explorar</a>
+                <?php }
+                
+                ?>
+                
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="form.php">Cuenta</a>
+              <?php
+                if (isset($_SESSION['usuarioo'])){
+                ?>
+
+                <a class="nav-link" href="../cerrarsesion.php">Cerrar Sesión</a>
+                <?php  }else{
+                  ?><a class="nav-link" href="form.php">Cuenta</a>
+                <?php }
+                
+                ?>
+                
               </li>
             </ul>
           </div>

@@ -1,6 +1,9 @@
+<?php 
+session_start();
+if ($_SESSION['usuarioo']){ 
+?>
 <!DOCTYPE html>
 <html lang="es">
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -107,3 +110,8 @@
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 </body>
 </html>
+<?php   
+}else{
+    header("location:index.html");
+}
+?>

@@ -14,9 +14,9 @@ if($_POST){
   if ($usuario) {
       if ($_POST['correo']==$usuario["correo"] && $_POST['contra']==$usuario['pass']) { 
         $_SESSION['usuarioo']=$usuario["correo"];
-        /*$_SESSION['id']=$usuario["idCliente"];*/
+        $_SESSION['id']=$usuario["Id_Usuario"];
         header('location:../indexusuario.php');
-        /*echo $_SESSION['id'];*/
+        echo $_SESSION['id'];
       }else{
         echo "<script>alert('Usuario y clave incorrectos, vuelva a intentarlo');</script>";   
       }
@@ -69,29 +69,29 @@ if ($usuario) {
   </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">PROPERTY DELUXE</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">PROPERTY DELUXE</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Servicios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="catalogo.php">Explorar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="form.php">Cuenta</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
