@@ -1,7 +1,6 @@
 <?php 
 session_start();
 if ($_SESSION['usuarioo']){ 
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -32,14 +31,16 @@ if ($_SESSION['usuarioo']){
                             <li><a href="#">Listado de propiedades</a></li>      
                         </ul>
                     </li>-->
-                    
+                    <li><a id='icono2' class='icono2' href='Vista/registro-casa.php?id=<?php echo $_SESSION['id'];?>'><span>Publica Tu Casa</span></a></li>
                     <?php
                     require('Controlador/controlArrendador.php');
                     require('Modelo/conexionLogin.php');
                     if($_SESSION['usuarioo']){
                         echo "<li><a id='icono2' class='icono2' href='cerrarsesion.php'><span>Cerrar Sesión</span></a></li>";
                     }
+                    
                     ?>
+                    
                 </ul>
                 <div class="enlaces uno" id="enlaces">
                     <a href="index.html">Inicio</a>
