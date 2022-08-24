@@ -91,7 +91,7 @@ if ($result = $conn->query($query) ) {
 
       ?>
     <div class="card">
-      <img src="../portada/<?php echo $row["foto"] ;?>" alt="">
+      <img src="../portada/<?php echo $row["foto"] ;?>" alt="Imagen Chuca">
             <?php
   
 
@@ -100,15 +100,15 @@ if ($result = $conn->query($query) ) {
         $field3name = $row["precio"];
         $field4name = $row["depa"];
         
-        echo '<h2>'.$field1name.'</h2>';
+        echo '<br><br><h2>'.$field1name.'</h2>';
         echo '<hr>';
-        echo "Dirección: ".$field2name.'<br />';
-        echo "Precio: ".$field3name.'<br />';
-        echo "Departamento: ".$field4name.'<br />';
-        echo "<a href='review.php'>Deja de tu reseña!</a>";
+        echo "<b>Dirección: </b>".$field2name.'<br />';
+        echo "<b>Precio:</b> $".$field3name.'<br />';
+        echo "<b>Departamento: </b>".$field4name.'<br />';
         ?>
-     <a href="verMas.php?idCasa=<?php echo $row['idPropiedad'];?>">Ver mas</a>        <?php
-    echo "</div>";
+        <a href="verMas.php?idCasa=<?php echo $row['idPropiedad'];?>">Ver mas</a>        <?php
+        echo "<a href='review.php'>Deja de tu reseña!</a>";
+        echo "</div>";
   }
   ?>
 

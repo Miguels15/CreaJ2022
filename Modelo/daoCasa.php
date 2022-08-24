@@ -4,7 +4,7 @@ require_once 'conexionClass.php';
 class DaoCasa{
 
     public function listadoCasa($id){
-        $sql = "select idPropiedad, nom, direc, precio, depa, descu, fotos, username from casa order by idPropiedad, nom, direc, precio, depa, descu, fotos, username";
+        $sql = "select idPropiedad, nom, direc, precio, depa, descu, foto from casa order by idPropiedad, nom, direc, precio, depa, descu, foto";
         $cn = new Conn();
         $dbh = $cn->getConnect();
         $stmt = $dbh->prepare($sql);
@@ -25,6 +25,19 @@ class DaoCasa{
 
 
     }
+
+    public function eliminar($id){
+        $cn = new Conn();        
+        $dbh = $cn->getConnect();
+        $sql = "DELETE FROM casa WHERE idPropiedad=:idCasa";
+        try{
+            $stmt = $dbh->prepare($sql);
+            $stmt->bindParam(':idCasa',$id);
+            $stmt->execute();
+        }catch(PDOException $e){
+            echo "Error: " . $e->getMessage();
+        }
+    } 
 
 
 

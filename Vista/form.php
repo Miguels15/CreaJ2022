@@ -29,9 +29,10 @@ if($_POST){
   if ($usuario) {
     if ($_POST['correo']==$usuario["correo"] && $_POST['contra']==$usuario['pass']) { 
       $_SESSION['usuarioo']=$usuario["correo"];
-      /*$_SESSION['id']=$usuario["idCliente"];*/
-      header('location:../indexusuario.php');
-      /*echo $_SESSION['id'];*/
+      $_SESSION['id']=$usuario["Id_Arrendador"];
+      $_SESSION['rol']=$usuario["rol"];
+      header('location:../indexarrendador.php');
+      echo $_SESSION['id'];
     }else{
       echo "<script>alert('Usuario y clave incorrectos, vuelva a intentarlo');</script>";   
     }
@@ -44,9 +45,10 @@ $usuario=$query3->fetch(PDO::FETCH_ASSOC);
 if ($usuario) {
   if ($_POST['correo']==$usuario["correo"] && $_POST['contra']==$usuario['pass']) { 
     $_SESSION['usuarioo']=$usuario["correo"];
-    /*$_SESSION['id']=$usuario["idCliente"];*/
+    $_SESSION['id']=$usuario["Id_admin"];
+    $_SESSION['rol']=$usuario["rol"];
     header('location:../inde2.php');
-    /*echo $_SESSION['id'];*/
+    echo $_SESSION['id'];
   }else{
     echo "<script>alert('Usuario y clave incorrectos, vuelva a intentarlo');</script>";   
   }

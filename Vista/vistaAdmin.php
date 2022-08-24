@@ -42,8 +42,9 @@ if ($_SESSION['usuarioo']){
           <a class="nav-link" href="vistaAdmin.php">Lista Usarios</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Listado de Propiedades</a>
+          <a class="nav-link" href="vistaAdminP.php">Listado de Propiedades</a>
         </li>
+        <li>
           <a class="nav-link" href="form.php">Cuenta</a>
         </li>
       </ul>

@@ -1,4 +1,7 @@
-
+<?php 
+session_start();
+if ($_SESSION['usuarioo']){ 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,13 +25,22 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+                <?php
+                if (isset($_SESSION['usuarioo'])){
+                ?>
+                <a class='nav-link active' aria-current='page' href='../indexarrendador.php?id=<?php echo $_SESSION['id'];?>'>Inicio</a>
+                <?php  
+                }else{
+                ?><a class="nav-link active' aria-current='page' href='../index.html">Inicio</a>
+                <?php 
+                }
+                ?>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Servicios</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="catalogo.php">Explorar</a>
+          <a class="nav-link" href="catalogo.php?id=<?php echo $_SESSION['id'];?>">Explorar</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Cuenta</a>
@@ -68,9 +80,9 @@
 				<option value="Usulután">Usulután</option>
 			</select>
       <textarea name="descu" placeholder="Ingresa una descripción de la propiedad" id="text"te cols="30" rows="10"></textarea>
-      <input type="file" name="images">
+      <input type="file" name="images" accept="image/*">
 
-      <input type="file" name="image[]" multiple>
+      <input type="file" name="image[]" multiple accept="image/*">
       <input type="submit" name="accion" value="Registrar propiedad" class="botonR">
 
 		</form>
@@ -101,3 +113,8 @@
     </div>
 </body>
 </html>
+<?php   
+}else{
+    header("location:index.html");
+}
+?>
