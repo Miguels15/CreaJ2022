@@ -8,6 +8,8 @@ $depa=isset($_POST['depa'])?$_POST['depa']:"";
 $descu=isset($_POST['descu'])?$_POST['descu']:"";
 $id = isset($_SESSION['id'])?$_SESSION['id']:"";
 
+
+
 $IMG = $_FILES['images']['tmp_name']; //así obtiene el archivo FILE
     $IMGNAME = $_FILES['images']['name'];     //así obtiene el nombre del archivo FILE
     $RUTA = "../portada/".$IMGNAME;       //aqui especifica la ruta en donde cargar la imagen
@@ -38,8 +40,10 @@ if (!$conn) {
        }
    }
    if($result){
-    header("Location: ../index.html");
+    header("Location: ../indexarrendador.php");
    }
 
 }
+
+
 ?>

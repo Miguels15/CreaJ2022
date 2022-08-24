@@ -9,6 +9,8 @@ $id = isset($_GET['id'])?$_GET['id']:"";
 $accion = isset($_REQUEST['accion'])?$_REQUEST['accion']:"";
 $idU= isset($_POST['idPropiedad'])?$_POST['idPropiedad']:"";
 
+
+$enlace ="<a href='../Controlador/controlador3.php?accion=Modificar&id=";
 if(  $accion=="eliminar"){
    echo $id;
    echo $accion;
@@ -19,8 +21,12 @@ if(  $accion=="eliminar"){
     echo "<a href='../Vista/vistaAdminP.php'>Regresar</a>";
 }
 
+if($id != "" && $accion=="modisficar"){
+    echo "<a href='../controlador2.php'>Regresar</a>";
+}
 
-if($id != "" && $accion=="modificar"){
+
+if($id != "" && $accion=="modisficar"){
     require_once '../Modelo/daoCasa.php';
     $dao = new DaoCasa();
     $cliente = $dao->mostrarCasa($id); 
@@ -42,11 +48,11 @@ if($id != "" && $accion=="modificar"){
 EOD;
 echo $html;
     echo "<div class='container'>    
-    <form action='controlCliente.php' method='post' >
+    <form action='controlador3.php' method='post' enctype='multipart/form-data'>
     <div class='form-group mb-2 row'>            
         <div class='col'>
         <label>
-                Imagen actual de protada:
+                Imagen actual de portada:
         </label>
         <img src='../portada/".$cliente['foto']."' alt='' width='150px'>
         <input class='form-control' size='20' type='text' name=''  required value='".$cliente["foto"]."' readonly />
@@ -70,7 +76,7 @@ echo $html;
         <label>
         Dirección:
         </label>
-        <textarea class='form-control' name='descu' id='text'te cols='30' rows='10' placeholder='".$cliente["descu"]."' required></textarea>
+        <textarea class='form-control' name='descu' id='text'te cols='30' rows='10' placeholder='".$cliente["descu"]."' value='".$cliente["descu"]."' required>".$cliente["descu"]."</textarea>
         
     </div>
     </div>
@@ -80,7 +86,8 @@ echo $html;
         <label>
             Descripción:
         </label>
-        <input type='email' class='form-control' name='direc' required value='".$cliente["direc"]."' />
+        <input type='text' autocomplete='off' class='form-control' name='direc' required placeholder='".$cliente["direc"]."' value='".$cliente["direc"]."' />
+        
     </div>
     </div>
 
@@ -89,7 +96,7 @@ echo $html;
         <label>
         Precio:
         </label>
-        <input type='number' name='precio' autocomplete='off' placeholder='".$cliente["precio"]."'>
+        <input type='number' name='precio' autocomplete='off' placeholder='".$cliente["precio"]."' value='".$cliente["precio"]."'>
     </div>
     </div>
 
@@ -99,7 +106,7 @@ echo $html;
         <label>
             departamento actual:
         </label>
-        <input type='text' name='' class='form-control' required value='".$cliente["depa"]."' readonly>
+        <input type='text' name='depa' class='form-control' required value='".$cliente["depa"]."' readonly>
     </div>
     <div class='col'>
         <label>
@@ -137,21 +144,14 @@ echo $html;
     </div>
     <br>
 
-    <div class='form-group  mb-2 row'>
-    <div class='col'>
-        <label>
-        Cambiar imagenes de galeria:
-        </label>
-        <input type='file' name='image[]' multiple accept='image/*'>
-    </div>
-    </div>
+    
     
     
     
     <fieldset>
-    <input type='submit' name='accion' value='Registrar propiedad' class='botonR'>
-
-        <input type='submit' class='button' name='accion' value='Modificar' required />
+    <input type='submit' name='accion' value='Modificar' class='botonR' required>
+    
+    <td>".$enlace . $cliente['idPropiedad'] ."'><i class='fas fa-edit'></i></a></td>
     
     </fieldset>
     </form>";
@@ -159,15 +159,5 @@ echo $html;
     
 }
 
-if($accion == "Modificar"){
-    require_once '../Modelo/classCliente.php';
-    require_once '../Modelo/daoCliente.php';
-    $dao = new DaoClient();
 
-    $cliente = new Usuario($nom, $direc, $precio, $depa, $descu, $gen, $rol); 
-    
-    $dao->modificar($cliente,$idU);
-    
-    header('Location: ../vista/vistaAdmin.php');
-}
 ?>

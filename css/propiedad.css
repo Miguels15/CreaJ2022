@@ -186,6 +186,7 @@ input, select, textarea {
 	min-height: 700px;
     animation: moverIzquierda 1s ease-in;
     margin-bottom: 2.5em;
+	height: 100px;
 
 
 }

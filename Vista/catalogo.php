@@ -24,15 +24,30 @@
               <li class="nav-item">
                 
                 <?php
+                require_once '../Controlador/controlArrendador.php';
                 session_start();
                 if (isset($_SESSION['usuarioo'])){
-                ?>
 
+                 if(isset($_SESSION['rol'])=="arrendador"){
+                  ?>
+                  <a class='nav-link active' aria-current='page' href='../indexarrendador.php?id=<?php echo $_SESSION['id'];?>'>Inicio</a>
+                 
+                  <?php
+                  
+                 }else{
+                  ?>
                   <a class='nav-link active' aria-current='page' href='../indexusuario.php?id=<?php echo $_SESSION['id'];?>'>Inicio</a>
+                  <?php
+                 }
+                ?>
+                
+                  
+                  
+                  
                 <?php  }else{
                   ?><a class='nav-link active' aria-current='page' href='../index.html'>Inicio</a>
-                <?php }
-                
+                <?php 
+                }
                 ?>
               </li>
               <li class="nav-item">
@@ -52,11 +67,12 @@
                 
               </li>
               <li class="nav-item">
+              <li><a id='icono2'  class='nav-link active' href='registro-casa.php?id=<?php echo $_SESSION['id'];?>'>Publica tu Casa</a></li>
               <?php
                 if (isset($_SESSION['usuarioo'])){
                 ?>
 
-                <a class="nav-link" href="../cerrarsesion.php">Cerrar Sesión</a>
+                <li><a class="nav-link" href="../cerrarsesion.php">Cerrar Sesión</a></li>
                 <?php  }else{
                   ?><a class="nav-link" href="form.php">Cuenta</a>
                 <?php }
@@ -91,7 +107,7 @@ if ($result = $conn->query($query) ) {
 
       ?>
     <div class="card">
-      <img src="../portada/<?php echo $row["foto"] ;?>" alt="Imagen Chuca">
+      <img src="../portada/<?php echo $row["foto"] ;?>" alt="">
             <?php
   
 
@@ -100,15 +116,15 @@ if ($result = $conn->query($query) ) {
         $field3name = $row["precio"];
         $field4name = $row["depa"];
         
-        echo '<br><br><h2>'.$field1name.'</h2>';
+        echo '<h2>'.$field1name.'</h2>';
         echo '<hr>';
-        echo "<b>Dirección: </b>".$field2name.'<br />';
-        echo "<b>Precio:</b> $".$field3name.'<br />';
-        echo "<b>Departamento: </b>".$field4name.'<br />';
-        ?>
-        <a href="verMas.php?idCasa=<?php echo $row['idPropiedad'];?>">Ver mas</a>        <?php
+        echo "Dirección: ".$field2name.'<br />';
+        echo "Precio: ".$field3name.'<br />';
+        echo "Departamento: ".$field4name.'<br />';
         echo "<a href='review.php'>Deja de tu reseña!</a>";
-        echo "</div>";
+        ?>
+     <a href="verMas.php?idCasa=<?php echo $row['idPropiedad'];?>">Ver mas</a>        <?php
+    echo "</div>";
   }
   ?>
 

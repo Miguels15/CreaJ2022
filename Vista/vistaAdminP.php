@@ -71,7 +71,7 @@ if ($_SESSION['usuarioo']){
 <?php
 $conn= mysqli_connect('localhost', 'property', '123456', 'property-deluxe' );
 $query = "SELECT * FROM casa";
-$enlace ="<a href='../Controlador/controlCasas2.php?accion=modificar&id=";
+$enlace ="<a href='../Controlador/controlador2.php?accion=modificar&id=";
 $enlace2 ="<a href='../Controlador/controlCasas2.php?accion=eliminar&id=";
 ?>
 
