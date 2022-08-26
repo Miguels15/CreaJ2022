@@ -121,7 +121,8 @@ if ($result = $conn->query($query) ) {
         echo "Dirección: ".$field2name.'<br />';
         echo "Precio: ".$field3name.'<br />';
         echo "Departamento: ".$field4name.'<br />';
-        echo "<a href='review.php'>Deja de tu reseña!</a>";
+        ?>
+        <a href="comentarios.php?idCasa=<?php echo $row['idPropiedad'];?>">Deja de tu reseña!</a><?php
         ?>
      <a href="verMas.php?idCasa=<?php echo $row['idPropiedad'];?>">Ver mas</a>        <?php
     echo "</div>";

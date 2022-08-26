@@ -58,16 +58,11 @@ if ($_SESSION['usuarioo']){
                 <br>
 			<h1>Registrar propiedad</h1>
 
-			<input type="text" name="nomp" autocomplete="off" placeholder="Nombre de la propiedad" id="nombrePropiedad">
-      <span id="propiedadError" class="Error"></span>
-
-			<input type="text" name="direc" autocomplete="off" placeholder="Dirección de la casa" id="direccionPropiedad">
-      <span id="direccionError" class="Error"></span>
-
-            <input type="number" name="precio" autocomplete="off" placeholder="Precio de la propiedad en dolares $" id="precioPropiedad">
-            <span id="precioError" class="Error"></span>
-
-            <select name="depa" id="departPropiedad">
+			<span>Ingresa la información</span>
+			<input type="text" name="nomp" autocomplete="off" placeholder="Nombre de la propiedad">
+			<input type="text" name="direc" autocomplete="off" placeholder="Dirección de la casa">
+            <input type="number" name="precio" autocomplete="off" placeholder="Precio de la propiedad en dolares $">
+            <select name="depa">
 				<option selected disabled="">Departamento en el que se ubica.</option>
 				<option value="Ahuachapán">Ahuachapán</option>
 				<option value="Cabañas">Cabañas</option>
@@ -84,18 +79,12 @@ if ($_SESSION['usuarioo']){
                 <option value="La Unión">La Unión</option>
 				<option value="Usulután">Usulután</option>
 			</select>
-      <span id="depaError" class="Error"></span>
-      <textarea name="descu" placeholder="Ingresa una descripción de la propiedad" id="text"te cols="30" rows="10" value=" "></textarea>
-      <span id="descripcionError" class="Error"></span>
+      <textarea name="descu" placeholder="Ingresa una descripción de la propiedad" id="text"te cols="30" rows="10"></textarea>
+      <input type="file" name="images" accept="image/*">
 
-      <input type="file" name="images" accept="image/*" id="imagen" >
-      <span id="portadaError" class="Error"></span>
+      <input type="file" name="image[]" multiple accept="image/*">
+      <input type="submit" name="accion" value="Registrar propiedad" class="botonR">
 
-      <input type="file" name="image[]" multiple accept="image/*" id="fotos">
-      <span id="fotosError" class="Error"></span>
-
-      <input type="submit" name="accion" value="Registrar propiedad" class="botonR" >
-      <script src="../js/validarCasa.js"></script>
 		</form>
 	</div>
 	<div class="overlay-container">

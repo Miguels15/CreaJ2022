@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+body{
+    background-color: rgb(130, 202, 177);
+}
+
+
+
+.formulario-registro{
+    margin: auto;
+    width: 90%;
+    background-color: aliceblue;
+}
+
+.contenedor{
+    margin-top: 2rem;
+    padding: 20px;
+}
+
+.input-contenedor{
+    margin: auto;
+    width: 90%;
+    margin-bottom: 15px;
+    border: 1px solid #aaa;
+}
+
+h1{
+    text-align: center;
+    color: #1a2537;
+    font-size: 40px;
+    font-family: 'Lato', sans-serif;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+select{
+    
+    font-size: 20px;
+    width: 84.5%;
+    padding: 2%;
+    border: none;
+}
+
+.icon{
+    min-width: 10%;
+    text-align: center;
+    color: #999;
+}
+
+.botonL, .botonR{
+    border: none;
+    width: 90%;
+    display: block;
+    margin: auto;
+    color: antiquewhite;
+    font-size: 20PX;
+    background-color: #E57F84;
+    padding: 15px 20px;
+    border-radius: 5px;
+    margin-bottom: 0.5em;
+    cursor: pointer;
+}
+
+.botonR{
+    background-color: #4297A0;
+    color: antiquewhite;
+}
+
+.botonL a{
+    text-decoration: none;
+    color: antiquewhite;
+    padding: 4% 20%;
+}
+
+.botonL a:hover{
+    color: rgb(238, 235, 231);
+}
+
+.botonL:hover{
+    background: #ec646b;
+    color: rgb(238, 235, 231);
+}
+
+.botonR:hover, .botonR a:hover{
+    background: #2a848e;
+    color: rgb(238, 235, 231);
+}
+
+p{
+    text-align: center;
+}
+
+.link{
+    text-decoration: none;
+    color: #1a2537;
+    font-weight: 600;
+}
+
+.link:hover{
+    color: cadetblue;
+}
+
+@media(min-width:768px){
+    .formulario-registro{
+        margin: auto;
+        width: 500px;
+        border-radius: 5px;
+    }
+}
