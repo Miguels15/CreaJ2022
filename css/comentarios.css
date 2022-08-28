@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+.mySlides1{
+    display: none;
+    background-color:#4296a023;
+}
+.mySlides2{
+    display: block;
+    background-color: #4296a023;
+}
+
+.verMas img {
+    vertical-align: middle;
+    width:100%;
+    height: 410px;
+    object-fit:contain;
+    
+    
+}
+textarea{
+  resize: none !important;
+}
+.btn{
+  background-color: #2F5061 !important;
+  color: #fff !important;
+  width: 100%;
+  display: block !important;
+  margin: auto !important;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  background-color: #f1f1f1;;
+  color: #2b2b2b;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a grey background color */
+.prev:hover, .next:hover {
+  background-color: #2b2b2b;
+  color: #f1f1f1;
+}
+
+body{
+	font-family: 'Montserrat', sans-serif;
+    background-image: linear-gradient(rgb(242, 244, 248), rgb(194, 193, 193));
+    opacity: 0.8;
+}
+nav.navbar{
+	background-color: #4297A0 !important;
+}
+nav.navbar ul li a{
+    color: #fff !important;
+}
+
+.verMas{
+      width: 90%;
+      margin: auto;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      background: repeating-linear-gradient( 45deg, #4297A0, #4297A0 9.5px, #e6f1f7 9.5px, #e6f1f7 47.5px );
+      background-attachment: fixed;
+      border-radius: 10px;
+}
+
+.infoBox{
+    width: 90%;
+    margin: auto;
+    margin-top: -30px;
+    padding-bottom: 10px;
+    background-color: #f1f1f1;
+}
+
+/*Diseño para enviar los comentarios*/
+
+.boxContainer
+{
+    position: relative;
+    width: 100%;
+    padding: 40px 100px;
+}
+
+.boxContainer .Titulo
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+
+.boxContainer .Titulo h3
+{
+    color: #c53e45;
+}
+
+.box
+{
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px 4px 4px 5px;
+}
+/*Fin del diseño de envio*/
+
+/*Diseño de los comentarios*/
+.boxComentarios
+{
+  position: relative;
+  width: 100%;
+  padding: 20px 135px;
+}
+
+.comentarios
+{
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 7px 5px 5px 7px;
+}
+
+.comentarios b
+{
+  color: #346f8d;
+}
+
+.comentarios span
+{
+  color: #c53e45;
+}
+/*Fin del diseño de los comentarios*/
+
+h1{
+   width: 90%;
+   margin: auto;
+   margin-bottom: 6px;
+   font-weight: bold;
+}
+
+.form-label
+{
+    color: #3ad7e9;
+}
+
+hr{
+    width: 70%;
+    margin-bottom: 4px;
+    padding: 2.5px;
+	background: rgb(253, 102, 102);
+	border: none;
+}
+
+hr:nth-child(odd){
+    background: #4297A0;
+    width: 50%;
+    
+}
+.info{
+    font-size: larger;
+    width: 90%;
+    margin: auto;
+}
+
+.compra{
+    padding: 10px 20px;
+	background-color: rgb(253, 102, 102);
+	border-radius: 40px;
+	position: absolute;
+    left: 85%;
+    top: 210px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #fff;
+}
+.compra:hover{
+    color: #000;
+}
+
+.container-footer{
+    width: 100%;
+    padding: 40px 0;
+    background: #2b2b2b;
+    margin-top: 30px;
+  }
+  
+  .container-footer footer{
+    max-width: 1200px;
+    margin: auto;
+  }
+ 
+  .container-footer footer .redes-footer{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  
+  .container-footer footer .redes-footer .icon-redes-footer{
+    font-size: 20px;
+    margin: 20px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    color: #a2a2a2;
+  }
+  
+  footer .redes-footer .fa-facebook-f{
+    background: #41579A;
+    color: #fff;
+  }
+  
+  footer .redes-footer .fa-twitter{
+    background: #257bdd;
+    color: #fff;
+  }
+  
+  footer .redes-footer .fa-instagram{
+    background: linear-gradient(to top right, #FCDE30, #E9712A, #D2313B, #AE4198, #7540A1, #5443A8);
+    color: #fff;
+  }
+  
+  
+  .container-footer footer hr{
+    margin-top: 20px;
+    border: none;
+    height: 2px;
+    background: #c0c0c07a;
+  }
+  
+  .container-footer h4{
+    text-align: center;
+    margin-top: 40px;
+    color: #8e8e8e;
+    font-weight: 500;
+  }
+
+  @media screen and (max-width: 855px ) {
+	.compra{
+        position: initial;
+        margin-left: 5%;
+    }
+}
+
+    @media screen and (max-width: 991px ){
+        .boxContainer{
+            padding: 15px;
+        }
+
+        .boxComentarios{
+          padding: 5px;
+        }
+    }
+
+@keyframes arriba{
+    0%{
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
