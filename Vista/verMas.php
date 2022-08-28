@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../css/verMas.css">
+    <link rel="stylesheet" href="../css/comentarios.css">
     <script src="../js/VerMas.js"></script>
     <title>Ver mas</title>
     </head>
@@ -123,44 +123,47 @@
 $result->free();
 ?>
  <form method="POST" action="./php/enviarcomentario.php">
-          <section id="contact">
-            <div class="container px-4">
-              <div class="row gx-4 justify-content-center">
-                <div class="col-lg-8">
-                <div class="col-xs-12">
-         <h3>¡Haz un Comentario!</h3>
-
-       <br>
+         <div class="boxContainer">
+    <div class="box">
+      <div class="boxForm">
         <div class="form-group">
-        <label for="nombre" class="form-label">Nombre</label>
-        <input class="form-control" name="nombre" type="text" id="nombre" placeholder="Escribe tu nombre" required >
+        <div class="Titulo"> 
+        <h3>¡Haz un Comentario!</h3>
+        </div>
+        <label for="nombre" class="form-label">Nombre:</label>
+            <input class="form-control" name="nombre" type="text" id="nombre" placeholder="Escribe tu nombre" required >
+          </div>
+          
+          <br>
+
+          <div class="form-group">
+          <label for="comentario" class="form-label">Comentario:</label>
+            <textarea class="form-control" name="comentario"  cols="30" rows="5" type="text" id="comentario" 
+                placeholder="Escribe tu comentario......" required></textarea>
+          </div>
+          <br>
+          <br>
+          <input class="btn" type="submit"  value="Enviar Comentario" id="envio">
+        </div>
       </div>
-                        
-            <br>
-            <div class="form-group">
-            <label for="comentario" class="form-label">Comentario:</label>
-             <textarea class="form-control" name="comentario" cols="30" rows="5" type="text" id="comentario" 
-                placeholder="Escribe tu comentario......"></textarea>
-               </div>
-             <br>
-             <input class="btn" type="submit"  value="Enviar Comentario">
-            <br>
-         <br>
-             <br>
+    </div>
+  </div>
              <?php
 
 $conexion=mysqli_connect("localhost","property","123456","property-deluxe"); 
 $resultado= mysqli_query($conexion, 'SELECT * FROM comentario');
 
 while($comentario = mysqli_fetch_object($resultado)){
-    ?>
-    <b><?php echo($comentario->nomUsuario);  ?></b> Ha comentado: 
-    <br />
-    <?php echo ($comentario->comentario);?>
-    <br />
-    <hr />
-
-    <?php
+  ?>
+  <div class="boxComentarios">
+    <div class="comentarios">
+  <b><?php echo($comentario->nomUsuario);  ?></b> <span>Ha comentado: </span><hr>
+  <br />
+  <?php echo ($comentario->comentario);?>
+  <br />
+  </div>
+</div>
+  <?php
 }
 
 ?> 
